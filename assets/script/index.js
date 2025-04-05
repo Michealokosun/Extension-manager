@@ -56,6 +56,8 @@ darkBtn.addEventListener("click", () => {
 async function fetchData() {
   const res = await fetch("../../data.json");
   extensionData = await res.json();
+  console.log(res.json());
+
   applyfilter(currentfilter);
 }
 
