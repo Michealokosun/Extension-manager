@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" / >
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <title>Frontend Mentor | Browser extensions manager UI</title>
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="./assets/images/logo.svg" alt="" />
+        </div>
+        <div id="theme-toggle" class="theme-toggle">
+          <span>
+            <img
+              id="dark"
+              data-theme="dark"
+              class="hidden"
+              src="./assets/images/icon-moon.svg"
+              alt=""
+            />
+          </span>
+
+          <span
+            ><img id="light" src="./assets/images/icon-sun.svg" alt=""
+          /></span>
+        </div>
+      </nav>
+      <section class="tab-buttons">
+        <div class="tabs">
+          <div class="title">
+            <h3>Extensions List</h3>
+          </div>
+          <div class="buttons">
+            <button data-tab="All" class="active">All</button>
+            <button data-tab="Active">Active</button>
+            <button data-tab="Inactive">Inactive</button>
+          </div>
+        </div>
+      </section>
+      <section class="extention_cards">
+        <div id="cards" class="cards"></div>
+      </section>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="./assets/script/index.js"></script>
+  </body>
+</html>

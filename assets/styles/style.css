@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: natos-bold;
+  src: url("/assets/fonts/static/NotoSans-Bold.ttf");
+}
+@font-face {
+  font-family: natos-medium;
+  src: url("/assets/fonts/static/NotoSans-Medium.ttf");
+}
+@font-face {
+  font-family: natos-thin;
+  src: url("/assets/fonts/static/NotoSans-Regular.ttf");
+}
+
+:root {
+  --backgroundColor: hsl(227, 75%, 14%);
+  --activeButtonColor: hsl(3, 71%, 56%);
+  --desktopMaxWidth: 1000px;
+  --mobileMaxWidth: 375px;
+  --textcolor: hsl(0, 0%, 100%);
+  --buttonBackground: hsl(225, 23%, 24%);
+  --navbackground: hsl(225, 23%, 24%);
+  --cardBackground: hsl(226, 25%, 17%);
+  --subtextcolor: hsl(0, 0%, 78%);
+}
+
+[theme="light"] {
+  --backgroundColor: hsl(216, 100%, 95%);
+  --activeButtonColor: hsl(3, 71%, 56%);
+  --desktopMaxWidth: 1000px;
+  --mobileMaxWidth: 375px;
+  --textcolor: hsl(227, 75%, 14%);
+  --activebuttonBg: white;
+  --navbackground: white;
+  --buttonBackground: hsl(0, 0%, 95%);
+  --navboxShadow: 0 2px 2px 3px hsl(217, 61%, 90%);
+  --cardBackground: white;
+  --subtextcolor: hsl(226, 11%, 37%);
+}
+
+body {
+  background-color: var(--backgroundColor);
+  font-family: natos-bold;
+}
+
+.no-data {
+  color: var(--textcolor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--desktopMaxWidth);
+  margin-inline: auto;
+  padding: 0 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--navbackground);
+  padding: 7px 20px;
+  margin-top: 30px;
+  border-radius: 13px;
+  box-shadow: var(--navboxShadow);
+}
+
+nav .logo img {
+  width: 100%;
+  max-width: 130px;
+  color: white;
+}
+
+nav .theme-toggle span img {
+  background-color: var(--buttonBackground);
+  display: block;
+  padding: 5px;
+  border: 1px solid hsl(3, 71%, 56%);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+nav .theme-toggle span img.hidden {
+  display: none;
+}
+
+section.tab-buttons {
+  margin-top: 10px;
+}
+section.tab-buttons .tabs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+section.tab-buttons .tabs .title {
+  color: var(--textcolor);
+  font-size: 1.5rem;
+}
+section.tab-buttons .tabs .buttons {
+  display: flex;
+  gap: 10px;
+}
+section.tab-buttons .tabs .buttons button {
+  color: var(--textcolor);
+  font-size: 1rem;
+  background: var(--activebuttonBg);
+  padding: 6px 25px;
+  border: none;
+  font-family: natos-medium;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+}
+
+section.tab-buttons .tabs .buttons button.active {
+  background-color: var(--activeButtonColor);
+  color: white;
+  outline: 1px solid hsl(3, 71%, 56%);
+  border: 2px solid hsl(0, 18%, 97%);
+}
+
+section.extention_cards {
+  margin-top: 20px;
+}
+section.extention_cards .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+section.extention_cards .cards .card {
+  background-color: var(--cardBackground);
+  padding: 30px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(197, 196, 196, 0.4);
+}
+section.extention_cards .cards .card .card-body {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+section.extention_cards .cards .card .card-body .card_content h1 {
+  color: var(--textcolor);
+}
+section.extention_cards .cards .card .card-body .card_content p {
+  color: var(--subtextcolor);
+  font-family: natos-thin;
+  /* font-size: calc(0.9rem, 5rem, 4vw); */
+  font-size: 0.9rem;
+}
+section.extention_cards .cards .card .card-footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.extention_cards .cards .card .card-footer button {
+  color: var(--textcolor);
+  font-size: 1rem;
+  background-color: var(--buttonBackground);
+  padding: 10px 20px;
+  border: none;
+  font-family: natos-medium;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+  text-transform: capitalize;
+}
+section.extention_cards .cards .card .card-footer button:hover {
+  background-color: var(--activeButtonColor);
+  color: hsl(0, 0%, 100%);
+}
+
+section.extention_cards .cards .card .card-footer .custom_checkbox {
+  display: flex;
+}
+section.extention_cards .cards .card .card-footer .custom_checkbox input {
+  /* visibility: hidden; */
+  display: none;
+}
+section.extention_cards .cards .card .card-footer .custom_checkbox div {
+  background-color: hsl(225, 5%, 34%);
+  width: 40px;
+  height: 20px;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+}
+
+section.extention_cards .cards .card .card-footer .custom_checkbox div::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: white;
+  position: absolute;
+}
+
+section.extention_cards
+  .cards
+  .card
+  .card-footer
+  .custom_checkbox
+  input:checked
+  + div {
+  background-color: hsl(3, 77%, 44%);
+}
+section.extention_cards
+  .cards
+  .card
+  .card-footer
+  .custom_checkbox
+  input:checked
+  + div::after {
+  transition: all ease-in-out 0.1s;
+  right: 0;
+}
+
+@media only screen and (min-width: 40rem) {
+  section.tab-buttons .tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  section.extention_cards .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
